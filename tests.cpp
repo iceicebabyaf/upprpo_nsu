@@ -79,5 +79,17 @@ TEST(CandleTest, IsRed_SmallCloseR) {
 }
 
 
-
+//      2.6
+TEST(CandleTest, IsGreen_BigCloseG){
+    Candle candle(100.0, 150.0, 90.0, 120.0);
+    EXPECT_EQ(candle.is_green(), 1);
+}
+TEST(CandleTest, IsGreen_EQG){
+    Candle candle(100.0, 150.0, 90.0, 100);
+    EXPECT_EQ(candle.is_green(), 0);
+}
+TEST(CandleTest, IsGreen_SmallCloseG) {
+    Candle candle(100.0, 150.0, 250.0, 50.0);
+    EXPECT_EQ(candle.is_green(), 0);
+}
 
