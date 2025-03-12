@@ -64,3 +64,20 @@ TEST(CandleTest, BodySize_Negative) {
 }
 
 
+//      2.5
+TEST(CandleTest, IsRed_BigCloseR){
+    Candle candle(100.0, 150.0, 90.0, 120.0);
+    EXPECT_EQ(candle.is_red(), 0);
+}
+TEST(CandleTest, IsRed_EQR){
+    Candle candle(100.0, 150.0, 90.0, 100);
+    EXPECT_EQ(candle.is_red(), 0);
+}
+TEST(CandleTest, IsRed_SmallCloseR) {
+    Candle candle(100.0, 150.0, 250.0, 50.0);
+    EXPECT_EQ(candle.is_red(), 1);
+}
+
+
+
+
