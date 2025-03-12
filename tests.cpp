@@ -34,3 +34,18 @@ TEST(CandleTest, Contains_Out){
 }
 
 
+//      2.3
+TEST(CandleTest, FullSize_Into){
+    Candle candle(0.0, 100.0, 0.0, 50.0);
+    EXPECT_EQ(candle.full_size(), 100.0);
+}
+TEST(CandleTest, FullSize_EQ){
+    Candle candle(100.0, 150.0, 90.0, 120.0);
+    EXPECT_EQ(candle.full_size(), 60.0);
+}
+TEST(CandleTest, FullSize_Negative) {
+    Candle candle(200.0, 150.0, 250.0, 100.0);
+    EXPECT_EQ(candle.full_size(), 100.0);
+}
+
+
