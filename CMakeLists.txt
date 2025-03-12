@@ -15,7 +15,7 @@ FetchContent_MakeAvailable(googletest)
 file(GLOB TEST_SOURCES *.cpp)
 
 # Создаём тестовый исполняемый файл
-add_executable(testproj main.cpp candle.cpp candle.h tests.cpp)
+add_executable(testproj candle.cpp candle.h tests.cpp)
 
 # Линкуем Google Test
 target_link_libraries(testproj PRIVATE gtest gtest_main)
