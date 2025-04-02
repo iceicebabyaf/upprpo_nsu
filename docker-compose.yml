@@ -1,0 +1,25 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.app
+    container_name: test-app
+    networks:
+      - test-network
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    container_name: test-web
+    depends_on:
+      - app
+    ports:
+      - "80:80"
+    networks:
+      - test-network
+
+networks:
+  test-network:
