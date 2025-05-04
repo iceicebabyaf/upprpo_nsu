@@ -1,0 +1,14 @@
+app:
+  image: iceicebabyaf/test-repo-app:latest
+  replicas: 1 # реплики для каждого деплоя
+  name: test-app
+
+web:
+  image: iceicebabyaf/test-repo-web:latest
+  replicas: 1
+  name: test-web
+
+service:
+  type: NodePort
+  port: 80
+  nodePort: 30001

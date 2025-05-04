@@ -1,0 +1,4 @@
+apiVersion: v2
+name: test-repo-chart
+description: A Helm chart for Test Repo application
+version: 0.1.0

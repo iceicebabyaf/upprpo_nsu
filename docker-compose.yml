@@ -1,0 +1,19 @@
+services:
+  app:
+    image: iceicebabyaf/test-repo-app:latest
+    container_name: test-app
+    networks:
+      - test-network
+
+  web:
+    image: iceicebabyaf/test-repo-web:latest
+    container_name: test-web
+    depends_on:
+      - app
+    ports:
+      - "80:80"
+    networks:
+      - test-network
+
+networks:
+  test-network:

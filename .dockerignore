@@ -1,0 +1,7 @@
+.git
+build/
+*.o
+*.log
+Dockerfile.web
+Dockerfile.app
+docker-compose.yml
