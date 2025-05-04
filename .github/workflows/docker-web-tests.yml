@@ -59,7 +59,7 @@ jobs:
         files: test-repo-chart.tgz
         tag_name: v${{ github.run_number }}-${{ github.sha }}
       env:
-        GITHUB_TOKEN: ${{ github.token }}
+        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
 
     # Опциональный шаг: деплой в тестовый кластер
     - name: Deploy to Kubernetes cluster
