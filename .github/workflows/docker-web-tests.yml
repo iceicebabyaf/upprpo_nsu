@@ -53,7 +53,7 @@ jobs:
 
     - name: Publish Helm chart to GitHub Releases
       uses: softprops/action-gh-release@v1
-      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      if: github.event_name == 'push' && github.ref == 'refs/heads/feature/k8s-helm'
       with:
         files: test-repo-chart.tgz
         tag_name: v${{ github.run_number }}
