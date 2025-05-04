@@ -61,10 +61,3 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
 
-    # Опциональный шаг: деплой в тестовый кластер
-    - name: Deploy to Kubernetes cluster
-      if: github.event_name == 'push' && github.ref == 'refs/heads/feature/k8s-helm'
-      run: |
-        echo "${{ secrets.KUBE_CONFIG }}" | base64 -d > kubeconfig.yaml
-        export KUBECONFIG=kubeconfig.yaml
-        helm upgrade --install test-release ./helm/test-repo-chart
