@@ -18,4 +18,5 @@ spec:
       containers:
       - name: {{ .Values.web.name }}
         image: {{ .Values.web.image }}
+        imagePullPolicy: Always
         command: ["/entrypoint.sh"]
