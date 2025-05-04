@@ -52,3 +52,8 @@ bool Candle::is_red() const noexcept
 {
 	return close < open;
 }
+
+bool Candle::IsDoji() const noexcept
+{
+    return open == close;
+}
