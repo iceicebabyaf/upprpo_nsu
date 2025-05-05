@@ -1,10 +1,12 @@
 app:
-  image: iceicebabyaf/test-repo-app:${{ github.sha }}
-  replicas: 1 # реплики для каждого деплоя
+  image: iceicebabyaf/test-repo-app
+  tag: latest  # по умолчанию, если тег не указан
+  replicas: 1
   name: test-app
 
 web:
-  image: iceicebabyaf/test-repo-web:${{ github.sha }}
+  image: iceicebabyaf/test-repo-web
+  tag: latest
   replicas: 1
   name: test-web
 

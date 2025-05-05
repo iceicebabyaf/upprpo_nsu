@@ -17,6 +17,6 @@ spec:
       serviceAccountName: web-service-account
       containers:
       - name: {{ .Values.web.name }}
-        image: {{ .Values.web.image }}
+        image: {{ .Values.web.image }}:{{ .Values.web.tag }}
         imagePullPolicy: Always
         command: ["/entrypoint.sh"]

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: {{ .Values.app.name }}
-        image: {{ .Values.app.image }}
+        image: {{ .Values.app.image }}:{{ .Values.app.tag }}
         imagePullPolicy: Always
         command: ["/bin/sh", "-c"]
         args: ["/app/build/testproj --logtostderr && sleep infinity"]
