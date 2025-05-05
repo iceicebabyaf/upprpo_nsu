@@ -32,7 +32,7 @@ jobs:
         context: .
         file: Dockerfile.app
         push: true
-        tags: iceicebabyaf/test-repo-app:latest
+        tags: iceicebabyaf/test-repo-app:${{ github.sha }}
         no-cache: true
 
     - name: Build and push test-web image
@@ -41,7 +41,7 @@ jobs:
         context: .
         file: Dockerfile.web
         push: true
-        tags: iceicebabyaf/test-repo-web:latest
+        tags: iceicebabyaf/test-repo-web:${{ github.sha }}
         no-cache: true
 
     - name: Set up Helm

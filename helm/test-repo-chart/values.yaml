@@ -1,10 +1,10 @@
 app:
-  image: iceicebabyaf/test-repo-app:latest
+  image: iceicebabyaf/test-repo-app:${{ github.sha }}
   replicas: 1 # реплики для каждого деплоя
   name: test-app
 
 web:
-  image: iceicebabyaf/test-repo-web:latest
+  image: iceicebabyaf/test-repo-web:${{ github.sha }}
   replicas: 1
   name: test-web
 
