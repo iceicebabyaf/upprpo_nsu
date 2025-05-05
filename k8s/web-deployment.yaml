@@ -11,9 +11,11 @@ spec:
     metadata:
       labels:
         app: test-web
+      annotations:
+        checksum/app-image: "{{ .Values.app.tag | sha256sum }}"
     spec:
       serviceAccountName: web-service-account
       containers:
       - name: test-web
-        image: iceicebabyaf/test-repo-web:latest
+        image: iceicebabyaf/test-repo-web:{{ .Values.web.tag }}
         command: ["/entrypoint.sh"]
