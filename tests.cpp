@@ -18,6 +18,10 @@ TEST(CandleTest, BodyContains_OutsideBody) {
     Candle candle(100.0, 150.0, 90.0, 120.0);
     EXPECT_EQ(candle.body_contains(130.0), 0);
 }
+TEST(CandleTest, BodyContains_InsideBody) {
+    Candle candle(100.0, 150.0, 90.0, 120.0);
+    EXPECT_EQ(candle.body_contains(110.0), 1);
+}
 
 //      2.2
 TEST(CandleTest, Cointains_High){
@@ -93,8 +97,12 @@ TEST(CandleTest, IsGreen_SmallCloseG) {
     EXPECT_EQ(candle.is_green(), 0);
 }
 
+
 TEST(CandleTest, IsDoji_SlightDifference) {
     Candle candle(100.0, 150.0, 90.0, 100.0001);
     EXPECT_FALSE(candle.IsDoji());
 }
 
+// git rev-parse HEAD 
+// helm upgrade test-release ./helm/test-repo-chart --set app.tag=cb378242e7a3ab084cab71c23a27857817dde1e6 --set web.tag=cb378242e7a3ab084cab71c23a27857817dde1e6
+// kubectl get pods
