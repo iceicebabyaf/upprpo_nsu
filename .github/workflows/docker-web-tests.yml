@@ -33,6 +33,7 @@ jobs:
         file: Dockerfile.app
         push: true
         tags: iceicebabyaf/test-repo-app:${{ github.sha }}
+        platforms: linux/amd64,linux/arm64
         no-cache: true
 
     - name: Build and push test-web image
@@ -42,6 +43,7 @@ jobs:
         file: Dockerfile.web
         push: true
         tags: iceicebabyaf/test-repo-web:${{ github.sha }}
+        platforms: linux/amd64,linux/arm64
         no-cache: true
 
     - name: Set up Helm
