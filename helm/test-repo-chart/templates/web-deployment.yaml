@@ -13,6 +13,9 @@ spec:
     metadata:
       labels:
         app: {{ .Values.web.name }}
+      annotations:
+        # Добавляем аннотацию, которая меняется при каждом helm upgrade
+        checksum/app-image: "{{ .Values.app.tag | sha256sum }}"
     spec:
       serviceAccountName: web-service-account
       containers:
